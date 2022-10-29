@@ -1,6 +1,9 @@
+import AllPosts from "../../components/posts/allPosts"
+import { posts } from "../index"
+
 const AllPostsPage = () => {
     return (
-        <div>AllPostsPage</div>
+        <AllPosts posts={posts}/>
     )
 }
 

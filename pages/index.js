@@ -1,7 +1,7 @@
 import FeaturedPosts from "../components/homePage/featuredPosts"
 import { Hero } from "../components/homePage/hero"
 
-const posts = [
+export const posts = [
     {
         slug : 'getting-started-with-nextjs', 
         title : 'Getting started with nextjs', 
