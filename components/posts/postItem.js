@@ -1,8 +1,29 @@
+import Image from 'next/image'
+import Link from 'next/link'
 import classes from './postItem.module.css'
 
-const PostItem = () => {
+const PostItem = ({ title, image, excerpt, date, slug }) => {
+
+    const imagePath = `/images/posts/${slug}/${image}`
+    const formattedDate = new Date(date).toLocaleDateString('en-US', {
+        day : 'numeric',
+        month : 'long',
+        year : 'numeric'
+    })
+
     return (
-        <div>PostItem</div>
+        <li className={classes.post}>
+            <Link href={`/posts/${slug}`}>
+                <div className={classes.image}>
+                    <Image src={imagePath} alt={title} width={300} height={200}/>
+                </div>
+                <div className={classes.content}>
+                    <h3>{title}</h3>
+                    <time>{formattedDate}</time>
+                    <p>{excerpt}</p>
+                </div>
+            </Link>
+        </li>
     )
 }
 
